@@ -1,0 +1,33 @@
+@use 'variables';
+@use 'mixinsfunc';
+
+.nav{
+    background-color: variables.$color;
+
+    &__container{
+        width: 90%;
+        margin: auto;
+        height: 70px;
+        @include mixinsfunc.crear-flexbox(space-evenly);
+        gap: 1em;
+    }
+
+    &__item{
+        color: white;
+        text-decoration: none;
+
+        &--active{
+            text-decoration: underline;
+        }
+
+        &:hover{
+            color: black;
+        }
+    }
+
+    @media (min-width: 764px){
+        &__container{
+            justify-content: flex-end;
+        }
+    }
+}
